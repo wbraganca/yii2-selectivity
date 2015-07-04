@@ -1,0 +1,46 @@
+{
+    "name": "wbraganca/yii2-selectivity",
+    "description": "The yii2-selectivity is a Yii 2 wrapper for [selectivity](https://arendjr.github.io/selectivity/). A modular and light-weight selection library for jQuery and Zepto.js.",
+    "type": "yii2-extension",
+    "keywords": [
+        "wbraganca",
+        "yii2",
+        "yii2-selectivity",
+        "select",
+        "multiselect",
+        "dropdown"
+    ],
+    "homepage": "https://github.com/wbraganca/yii2-selectivity",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Wanderson Bragança",
+            "email": "wanderson.wbc@gmail.com",
+            "homepage": "http://wbraganca.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/wbraganca/yii2-selectivity/issues",
+        "source": "https://github.com/wbraganca/yii2-selectivity"
+    },
+    "require": {
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "bower-asset/selectivity": "^1.1.0"
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "wbraganca\\selectivity\\": "src"
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
