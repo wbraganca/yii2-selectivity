@@ -26,7 +26,7 @@
     "require": {
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "~2.0.0",
-        "bower-asset/selectivity": "^1.1.0"
+        "bower-asset/selectivity": "^2.0.0"
 
     },
     "require-dev": {
