@@ -33,7 +33,7 @@ use wbraganca\selectivity\SelectivityWidget;
 ?>
 
 <?= $form->field($model, 'city')->widget(SelectivityWidget::classname(), [
-    'clientOptions' => [
+    'pluginOptions' => [
         'allowClear' => true,
         'items' => ['Amsterdam', 'Antwerp'],
         'placeholder' => 'No city selected'
