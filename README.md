@@ -46,7 +46,7 @@ use wbraganca\selectivity\SelectivityWidget;
 ```
 
 
-Displaying the data with appeneded addon
+Displaying the data with appended addon
 ```php
 <?= $form->field($model, 'city')->widget(SelectivityWidget::classname(), [
     'options' => [
