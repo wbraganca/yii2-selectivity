@@ -190,11 +190,11 @@ input[type='text'].selectivity-multiple-input:focus {
 
 .selectivity-single-select-input {
   opacity: 0;
+  width: 0;
 }
 
 .selectivity-single-result-container {
   position: absolute;
-  /* top: 0.8em;*/ 
   top: 0;
   right: 15px;
   left: 5px;
@@ -211,7 +211,7 @@ input[type='text'].selectivity-multiple-input:focus {
 .selectivity-single-selected-item-remove {
   color: #000;
   float: right;
-  padding: 0 5px;
+  margin-right: 5px;
   position: relative;
   z-index: 1;
 }
@@ -224,18 +224,12 @@ input[type='text'].selectivity-multiple-input:focus {
 
 @media only screen and (max-device-width:480px) {
   .selectivity-single-select {
-    background: #eee;
     border-radius: 2px;
   }
 
   .selectivity-single-result-container {
     right: 5px;
   }
-
-  .selectivity-caret {
-    display: none;
-  }
-
 }
 
 /**

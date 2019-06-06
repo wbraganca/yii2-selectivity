@@ -16,7 +16,7 @@ $ composer require wbraganca/yii2-selectivity
 or add
 
 ```
-"wbraganca/yii2-selectivity": "~2.0.0"
+"wbraganca/yii2-selectivity": "~2.0.0-beta.1"
 ```
 
 to the require section of your `composer.json` file.
@@ -33,13 +33,40 @@ use wbraganca\selectivity\SelectivityWidget;
 ?>
 
 <?= $form->field($model, 'city')->widget(SelectivityWidget::classname(), [
+    'options' => [
+        'prompt' => ''
+    ],
     'pluginOptions' => [
         'allowClear' => true,
-        'data' => ['Amsterdam', 'Antwerp'],
+        'data' => ['Rio de Janeiro', 'São Paulo'],
         'placeholder' => 'No city selected'
     ]
 ]) ?>
 
+```
+
+
+Displaying the data with appeneded addon
+```php
+<?= $form->field($model, 'city')->widget(SelectivityWidget::classname(), [
+    'options' => [
+        'prompt' => ''
+    ],
+    'pluginOptions' => [
+        'allowClear' => true,
+        'data' => ['Rio de Janeiro', 'São Paulo'],
+    ],
+    'template' => '<div class="input-group">' .
+        '{input}' .
+        '<div class="input-group-append">' .
+        '<span class="input-group-btn">' .
+        '<button class="btn btn-success" type="button">' .
+        '<i class="fa fa-plus"></i>' .
+        '</button>' .
+        '</div>' .
+        '</span>' .
+        '</div>'
+]) ?>
 ```
 
 For more options, visit: https://arendjr.github.io/selectivity/#api

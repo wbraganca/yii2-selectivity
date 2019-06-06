@@ -4,7 +4,7 @@ yii2-selectivity change Log
 dev-master
 ----------
 
-version 2.0.0
+version 2.0.0-beta.1
 -------------
 **Date:** 06-Jun-2019
 

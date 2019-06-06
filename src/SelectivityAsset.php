@@ -45,9 +45,12 @@ class SelectivityAsset extends \yii\web\AssetBundle
      */
     public function init()
     {
-        $this->setSourcePath(__DIR__ . '/assets/selectivity');
-        $this->setupAssets('js', ['selectivity-jquery']);
-        $this->setupAssets('css', ['selectivity-jquery']);
+        $this->setSourcePath(__DIR__ . '/assets');
+        $this->setupAssets('js', [
+            'selectivity/selectivity-jquery',
+            'wb-widget-selectivity'
+        ]);
+        $this->setupAssets('css', ['selectivity/selectivity-jquery']);
         parent::init();
     }
 

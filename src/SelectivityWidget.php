@@ -23,20 +23,44 @@ class SelectivityWidget extends \yii\widgets\InputWidget
      * The name of the jQuery plugin to use for this widget.
      */
     const PLUGIN_NAME = 'selectivity';
+
     /**
      * @var array the JQuery plugin options for the Selectivity.js plugin.
      * @see https://arendjr.github.io/selectivity/#api
      */
     public $pluginOptions = [];
+
     /**
      * @var array the HTML attributes for the input tag.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $options = [];
+
     /**
      * @var string the hashed variable to store the pluginOptions
      */
     protected $_hashVar;
+
+    /**
+     * @var string If you wish to display Select2 with prepended and appended addons:
+     *
+     * ```
+     * 'template' => '<div class="input-group">' .
+     *  '{input}' .
+     *   '<div class="input-group-append">' .
+     *  '<span class="input-group-btn">' .
+     *   '<button class="btn btn-success" type="button">' .
+     *  '<i class="fa fa-plus"></i>' .
+     *  '</button>' .
+     *  '</div>' .
+     *   '</span>' .
+     *   '</div>'
+     * ```
+     *
+     * That way you don't need to deal with the template from the \yii\bootstrap\ActiveField class.
+     */
+    public $template = '{input}';
+
 
     /**
      * @inheritdoc
@@ -48,16 +72,18 @@ class SelectivityWidget extends \yii\widgets\InputWidget
         $emptyAttribute = ($multiple === true) ? [] : 'undefined';
 
         if ($this->hasModel()) {
-            echo Html::activeDropDownList($this->model, $this->attribute, $data, $this->options);
+            $input = Html::activeDropDownList($this->model, $this->attribute, $data, $this->options);
             if (!isset($this->pluginOptions['value']) && empty($this->model{$this->attribute})) {
                 $this->pluginOptions['value'] = $emptyAttribute;
             }
         } else {
-            echo Html::dropDownList($this->name, $this->value, $data, $this->options);
+            $input = Html::dropDownList($this->name, $this->value, $data, $this->options);
             if (!isset($this->pluginOptions['value']) && empty($this->value)) {
                 $this->pluginOptions['value'] = $emptyAttribute;
             }
         }
+
+        echo strtr($this->template, ['{input}' => $input]);
 
         $this->registerClientScript();
     }
@@ -90,6 +116,11 @@ class SelectivityWidget extends \yii\widgets\InputWidget
         $id = $this->options['id'];
         $js .= '$("#' . $id . '").' . self::PLUGIN_NAME . "(" . $this->_hashVar . ");\n";
         SelectivityAsset::register($view);
+        $view->registerJs($js);
+
+        $jsObserverVar = 'observer_' . $this->_hashVar;
+        $js = 'var ' . $jsObserverVar . ' = new WbWidgetSelectivity("' . $id . "\");\n";
+        $js .= $jsObserverVar . ".setObserver();\n";
         $view->registerJs($js);
     }
 }
