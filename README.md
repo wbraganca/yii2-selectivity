@@ -16,7 +16,7 @@ $ composer require wbraganca/yii2-selectivity
 or add
 
 ```
-"wbraganca/yii2-selectivity": "*"
+"wbraganca/yii2-selectivity": "~2.0.0"
 ```
 
 to the require section of your `composer.json` file.
@@ -35,7 +35,7 @@ use wbraganca\selectivity\SelectivityWidget;
 <?= $form->field($model, 'city')->widget(SelectivityWidget::classname(), [
     'pluginOptions' => [
         'allowClear' => true,
-        'items' => ['Amsterdam', 'Antwerp'],
+        'data' => ['Amsterdam', 'Antwerp'],
         'placeholder' => 'No city selected'
     ]
 ]) ?>

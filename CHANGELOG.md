@@ -4,6 +4,12 @@ yii2-selectivity change Log
 dev-master
 ----------
 
+version 2.0.0
+-------------
+**Date:** 06-Jun-2019
+
+- Enh: Selectivity.js dependency updated to ~3.1.0
+
 
 version 1.0.2
 -------------

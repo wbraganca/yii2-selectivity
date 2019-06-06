@@ -43,7 +43,7 @@ class SelectivityWidget extends \yii\widgets\InputWidget
      */
     public function run()
     {
-        $data = ArrayHelper::getValue($this->pluginOptions, 'items', []);
+        $data = ArrayHelper::getValue($this->pluginOptions, 'data', []);
         $multiple = ArrayHelper::getValue($this->pluginOptions, 'multiple', false);
         $emptyAttribute = ($multiple === true) ? [] : 'undefined';
 

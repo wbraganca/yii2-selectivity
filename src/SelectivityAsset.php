@@ -14,8 +14,6 @@ namespace wbraganca\selectivity;
  */
 class SelectivityAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@bower/selectivity/dist';
-
     /**
      * @inheritdoc
      */
@@ -47,8 +45,22 @@ class SelectivityAsset extends \yii\web\AssetBundle
      */
     public function init()
     {
-        $this->setupAssets('js', ['selectivity-full']);
-        $this->setupAssets('css', ['selectivity-full']);
+        $this->setSourcePath(__DIR__ . '/assets/selectivity');
+        $this->setupAssets('js', ['selectivity-jquery']);
+        $this->setupAssets('css', ['selectivity-jquery']);
         parent::init();
     }
+
+    /**
+     * Sets the source path if empty
+     * @param string $path the path to be set
+     */
+    protected function setSourcePath($path)
+    {
+        if (empty($this->sourcePath)) {
+            $this->sourcePath = $path;
+        }
+    }
 }
+
+
