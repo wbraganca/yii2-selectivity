@@ -16,7 +16,7 @@ $ composer require wbraganca/yii2-selectivity
 or add
 
 ```
-"wbraganca/yii2-selectivity": "~2.0.0-beta.1"
+"wbraganca/yii2-selectivity": "~2.0.0"
 ```
 
 to the require section of your `composer.json` file.
@@ -32,7 +32,7 @@ On your view file.
 use wbraganca\selectivity\SelectivityWidget;
 ?>
 
-<?= $form->field($model, 'city')->widget(SelectivityWidget::classname(), [
+<?= $form->field($model, 'city', ['options' => ['class' => 'selectivity-container'])->widget(SelectivityWidget::classname(), [
     'options' => [
         'prompt' => ''
     ],
@@ -48,7 +48,7 @@ use wbraganca\selectivity\SelectivityWidget;
 
 Displaying the data with appended addon
 ```php
-<?= $form->field($model, 'city')->widget(SelectivityWidget::classname(), [
+<?= $form->field($model, 'city', ['options' => ['class' => 'selectivity-container'])->widget(SelectivityWidget::classname(), [
     'options' => [
         'prompt' => ''
     ],

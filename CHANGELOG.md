@@ -3,6 +3,11 @@
 
 ## dev-master
 
+## version 2.0.0
+**Date:** 02-Jul-2019
+
+- Bug: Add CSS class to display block of error messages.
+
 ## version 2.0.0-beta.2
 **Date:** 08-Jun-2019
 

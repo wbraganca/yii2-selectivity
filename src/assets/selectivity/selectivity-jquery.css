@@ -1,12 +1,7 @@
-/**
- * All CSS that comes with Selectivity.js can be used as is, or tweaked to your heart's content :)
- *
- * Please realize though there is no "API contract" regarding styling of CSS classes, meaning that
- * any customized CSS made may need to be updated without warning if you want to upgrade the
- * Selectivity version you use. You can mitigate this problem by using your own templates instead of
- * those defined in src/templates.js, since templates will at the very least continue working across
- * patch versions and any changes necessary to templates will be documented in the changelog.
- */
+.selectivity-container.validating>.invalid-feedback {
+  display: block;
+}
+
 .selectivity-clearfix {
   clear: both;
 }
@@ -58,8 +53,7 @@
   position: relative;
 }
 
-.selectivity-load-more,
-.selectivity-result-item {
+.selectivity-load-more, .selectivity-result-item {
   cursor: pointer;
   padding: 7px;
 }
@@ -68,8 +62,7 @@
   padding-left: 17px;
 }
 
-.selectivity-load-more.highlight,
-.selectivity-result-item.highlight {
+.selectivity-load-more.highlight, .selectivity-result-item.highlight {
   background: #4484c7;
   color: #fff;
 }
@@ -91,9 +84,7 @@
   font-weight: bold;
 }
 
-.selectivity-load-more,
-.selectivity-result-item:last-child,
-.selectivity-result-children:last-child .selectivity-result-item:last-child {
+.selectivity-load-more, .selectivity-result-item:last-child, .selectivity-result-children:last-child .selectivity-result-item:last-child {
   border-radius: 0 0 4px 4px;
 }
 
@@ -101,16 +92,14 @@
   border-radius: 0;
 }
 
-.selectivity-error,
-.selectivity-loading,
-.selectivity-search-input-container,
-.selectivity-result-label {
+.selectivity-error, .selectivity-loading, .selectivity-search-input-container, .selectivity-result-label {
   padding: 7px;
 }
 
 /**
  * Multi-selection input
  */
+
 .selectivity-multiple-input-container {
   background: #eee;
   border-radius: 2px;
@@ -126,8 +115,7 @@
   line-height: calc(2em + 4px);
 }
 
-.selectivity-multiple-input,
-input[type='text'].selectivity-multiple-input {
+.selectivity-multiple-input, input[type='text'].selectivity-multiple-input {
   background-color: transparent;
   border: none;
   float: left;
@@ -138,8 +126,7 @@ input[type='text'].selectivity-multiple-input {
   padding: 0;
 }
 
-.selectivity-multiple-input:focus,
-input[type='text'].selectivity-multiple-input:focus {
+.selectivity-multiple-input:focus, input[type='text'].selectivity-multiple-input:focus {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -181,6 +168,7 @@ input[type='text'].selectivity-multiple-input:focus {
 /**
  * Single-selection input
  */
+
 .selectivity-single-select {
   cursor: pointer;
   position: relative;
@@ -226,7 +214,6 @@ input[type='text'].selectivity-multiple-input:focus {
   .selectivity-single-select {
     border-radius: 2px;
   }
-
   .selectivity-single-result-container {
     right: 5px;
   }
