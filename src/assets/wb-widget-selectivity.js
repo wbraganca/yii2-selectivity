@@ -11,6 +11,8 @@ var WbWidgetSelectivity = function (target) {
       var originalInput = jQuery('#' + target);
       var data = originalInput.selectivity('data');
 
+      addCSSValidationClasses(originalInput);
+
       if (Array.isArray(data)) {
         var values = data.map(function (item) { return item.id; });
         originalInput.val(values);
@@ -26,5 +28,16 @@ var WbWidgetSelectivity = function (target) {
       attributeOldValue: true,
       subtree: true
     });
+  }
+
+  var addCSSValidationClasses = function (originalInput) {
+    var parentOriginalInput = originalInput.parent();
+    if (parentOriginalInput.hasClass('input-group')) {
+      if (originalInput.hasClass('is-valid')) {
+        parentOriginalInput.removeClass('is-invalid').addClass('is-valid');
+      } else if (originalInput.hasClass('is-invalid')) {
+        parentOriginalInput.removeClass('is-valid').addClass('is-invalid');
+      }
+    }
   }
 }

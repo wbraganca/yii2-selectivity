@@ -3,6 +3,11 @@
 
 ## dev-master
 
+## version 2.0.1
+**Date:** 02-Jul-2019
+
+- Enh: Adds support for displaying the error message block for 'input-group' fields.
+
 ## version 2.0.0
 **Date:** 02-Jul-2019
 

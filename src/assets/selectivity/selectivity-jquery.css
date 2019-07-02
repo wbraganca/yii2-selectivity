@@ -1,4 +1,4 @@
-.selectivity-container.validating>.invalid-feedback {
+.selectivity-container>.is-invalid~.invalid-feedback {
   display: block;
 }
 
@@ -27,6 +27,7 @@
 /**
  * Dropdown
  */
+
 .selectivity-dropdown {
   background: #fff;
   border-radius: 4px;
@@ -222,6 +223,7 @@
 /**
  * Submenu
  */
+
 .selectivity-submenu-icon {
   position: absolute;
   right: 4px;

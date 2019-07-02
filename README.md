@@ -16,7 +16,7 @@ $ composer require wbraganca/yii2-selectivity
 or add
 
 ```
-"wbraganca/yii2-selectivity": "~2.0.0"
+"wbraganca/yii2-selectivity": "~2.0.1"
 ```
 
 to the require section of your `composer.json` file.
@@ -32,7 +32,27 @@ On your view file.
 use wbraganca\selectivity\SelectivityWidget;
 ?>
 
-<?= $form->field($model, 'city', ['options' => ['class' => 'selectivity-container'])->widget(SelectivityWidget::classname(), [
+<?= $form->field($model, 'city', [
+        'options' => ['class' => 'selectivity-container form-group']
+    ])->widget(SelectivityWidget::classname(), [
+    'options' => [
+        'prompt' => '',
+    ],
+    'pluginOptions' => [
+        'allowClear' => true,
+        'data' => ['Rio de Janeiro', 'São Paulo'],
+        'placeholder' => 'No city selected'
+
+    ]
+]) ?>
+```
+
+Displaying the data with appended addon
+
+```php
+<?= $form->field($model, 'city', [
+        'options' => ['class' => 'selectivity-container form-group']
+    ])->widget(SelectivityWidget::classname(), [
     'options' => [
         'prompt' => ''
     ],
@@ -40,21 +60,6 @@ use wbraganca\selectivity\SelectivityWidget;
         'allowClear' => true,
         'data' => ['Rio de Janeiro', 'São Paulo'],
         'placeholder' => 'No city selected'
-    ]
-]) ?>
-
-```
-
-
-Displaying the data with appended addon
-```php
-<?= $form->field($model, 'city', ['options' => ['class' => 'selectivity-container'])->widget(SelectivityWidget::classname(), [
-    'options' => [
-        'prompt' => ''
-    ],
-    'pluginOptions' => [
-        'allowClear' => true,
-        'data' => ['Rio de Janeiro', 'São Paulo'],
     ],
     'template' => '<div class="input-group">' .
         '{input}' .
