@@ -1,15 +1,22 @@
 var WbWidgetSelectivity = function (target) {
   this.originalInput = document.querySelector('#' + target);
   this.selectivityInput = document.querySelector('.field-' + target + ' .selectivity-input');
+  this.multiple = jQuery('#' + target).prop('multiple');
 
   this.setObserver = function () {
     var $self = this;
     var mutationObserver = new MutationObserver(function (mutations) {
       var className = mutations[0].target.className;
-      $self.selectivityInput.setAttribute("class", className.trim() + " selectivity-input");
-
       var originalInput = jQuery('#' + target);
       var data = originalInput.selectivity('data');
+
+      var cssClasses = ' selectivity-input';
+
+      if ($self.multiple) {
+        cssClasses = cssClasses + ' wrap-selectivity-multiple-input';
+      }
+
+      $self.selectivityInput.setAttribute("class", className.trim() + cssClasses);
 
       addCSSValidationClasses(originalInput);
 

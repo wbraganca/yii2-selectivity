@@ -69,7 +69,12 @@ class SelectivityWidget extends \yii\widgets\InputWidget
     {
         $data = ArrayHelper::getValue($this->pluginOptions, 'data', []);
         $multiple = ArrayHelper::getValue($this->pluginOptions, 'multiple', false);
-        $emptyAttribute = ($multiple === true) ? [] : 'undefined';
+        $emptyAttribute = 'undefined';
+
+        if ($multiple === true) {
+            $emptyAttribute = [];
+            $this->options['multiple'] = true;
+        }
 
         if ($this->hasModel()) {
             $input = Html::activeDropDownList($this->model, $this->attribute, $data, $this->options);

@@ -64,7 +64,7 @@
 }
 
 .selectivity-load-more.highlight, .selectivity-result-item.highlight {
-  background: #4484c7;
+  background: #058ed0;
   color: #fff;
 }
 
@@ -102,13 +102,10 @@
  */
 
 .selectivity-multiple-input-container {
-  background: #eee;
-  border-radius: 2px;
   cursor: text;
   max-height: 10em;
   min-height: calc(2em + 4px);
   overflow: auto;
-  padding: 5px;
 }
 
 .selectivity-multiple-input-container .selectivity-placeholder {
@@ -139,7 +136,7 @@
 }
 
 .selectivity-multiple-selected-item {
-  background: #4484c7;
+  background: #058ed0;
   border-radius: 3px;
   color: #fff;
   cursor: default;
@@ -164,6 +161,11 @@
   cursor: pointer;
   margin-left: -5px;
   padding: 5px;
+}
+
+.wrap-selectivity-multiple-input {
+  height: auto;
+  padding: 0
 }
 
 /**

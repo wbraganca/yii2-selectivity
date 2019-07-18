@@ -3,6 +3,11 @@
 
 ## dev-master
 
+## version 2.0.2
+**Date:** 18-Jul-2019
+
+- Bug: Fix display for multiple type fields.
+
 ## version 2.0.1
 **Date:** 02-Jul-2019
 
